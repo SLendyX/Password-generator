@@ -13,23 +13,84 @@ let secondPasswordEl = document.getElementById("password2-el");
 
 let generateEl = document.getElementById("getpassword")
 
-function getRandom(){
-    return Math.floor(Math.random()*characters.length);
+let sliderEl = document.getElementById("myRange");
+let selectorEl = document.getElementById("selector-el")
+let maxLength = 15
+
+let numbersEl = document.getElementById("numbers");
+let symbolsEl = document.getElementById("symbols")
+
+sliderEl.addEventListener("input", function(){
+    selectorEl.textContent = `Password length: ${sliderEl.value}`
+    maxLength = sliderEl.value;
+})
+
+
+function getRandom(numbers, symbols){
+    if(!numbers && symbols){
+        let ok = Math.floor(Math.random()*2);
+
+        if(ok){
+            return Math.floor(Math.random()*52);
+        }else
+            return Math.floor((Math.random()*58+124)/2)
+
+    }else if(numbers && !symbols){
+        return Math.floor(Math.random()*62);
+    }else if(!numbers && !symbols){
+        return Math.floor(Math.random()*52);
+    }else
+        return Math.floor(Math.random()*characters.length);
+        
 }
+
+
 
 generateEl.addEventListener("click", function() {
 
     firstPasswordEl.textContent = "";
     secondPasswordEl.textContent = "";
 
-    for(let i=0; i<18; i++){
-        let randomIndex = getRandom();
-        firstPasswordEl.textContent += characters[randomIndex];
-        randomIndex = getRandom();
-        secondPasswordEl.textContent += characters[randomIndex];
+    
+    if(!numbersEl.checked && symbolsEl.checked){
+        for(let i=0; i<maxLength; i++){
+            let randomIndex = getRandom(false, true);
+            firstPasswordEl.textContent += characters[randomIndex];
+            randomIndex = getRandom(false, true);
+            secondPasswordEl.textContent += characters[randomIndex];
+            
+        }
+    }else if(numbersEl.checked && !symbolsEl.checked){
+        for(let i=0; i<maxLength; i++){
+            let randomIndex = getRandom(true, false);
+            firstPasswordEl.textContent += characters[randomIndex];
+            randomIndex = getRandom(true, false);
+            secondPasswordEl.textContent += characters[randomIndex];
+            
+        }
+    }else if(!numbersEl.checked && !symbolsEl.checked){
+        for(let i=0; i<maxLength; i++){
+            let randomIndex = getRandom(false, false);
+            firstPasswordEl.textContent += characters[randomIndex];
+            randomIndex = getRandom(false, false);
+            secondPasswordEl.textContent += characters[randomIndex];
+            
+        }
+    }else{
+        for(let i=0; i<maxLength; i++){
+            let randomIndex = getRandom(true, true);
+            firstPasswordEl.textContent += characters[randomIndex];
+            randomIndex = getRandom(true, true);
+            secondPasswordEl.textContent += characters[randomIndex];
+        
+        }
     }
 
 })
+
+
+//52 0 61 9
+//62 ~ 91
 
 
 firstPasswordEl.addEventListener("click", async function(){ 

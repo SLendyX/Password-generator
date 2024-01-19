@@ -20,7 +20,7 @@ span{
     color:white;
     width: 446px;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 35px;
     font-size: 16px;
     
 }
@@ -37,7 +37,9 @@ span{
     border:none;
     border-radius: 6px;
     cursor: pointer;
-    margin:51px 0 35px;
+    width: 250px;
+    margin: 0 auto;
+    display: block;
 }
 
 hr{
@@ -51,7 +53,8 @@ hr{
 }
 
 #passwords div{
-    width: 211px;
+    width:max-content;
+    padding: 0 10px;
     height: 39px;
     background-color: #273549;
     margin: 35px 12px;
@@ -70,3 +73,52 @@ hr{
     to{background-color:#273549}
 }
 
+.slider{
+    appearance: none;
+    background: #273549;
+    border-radius: 20px;
+    height: 10px;
+    margin-top: 12px;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; 
+    height: 15px; 
+    background: #55F991;
+    border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:51px 0 30px;
+}
+
+#password-length{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+}
+
+.options div{
+    margin: 5px 0;
+}
+
+.checkbox-label{
+    user-select: none;
+}
+
+.checkbox{
+    cursor: pointer;
+}
