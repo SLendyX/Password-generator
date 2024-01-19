@@ -8,33 +8,48 @@
     </head>
     <body>
         <h1>Generate a <span>random password</span></h1>
+
         <div id="head">
+
             <p>Never use an insecure password again.</p>
+
             <div class="flex">
                 <div class="options">
                     <div class="checkbox-label">
+
                         <input type = "checkbox" name="numbers" id="numbers" class="checkbox" checked="true">
                         <span class="checkmark"></span>
                         <label for="numbers">Numbers</label>
+
                     </div>
                     <div class="checkbox-label">
+
                         <input type = "checkbox" name="symbols" id="symbols" class="checkbox" checked="true">
                         <span class="checkmark"></span>
                         <label for="symbols" >Symbols</label>
+
                     </div>
                 </div>
+
                 <div id = "password-length">
+
                     <span id="selector-el">Password length: 15</span>
                     <input type="range" min="8" max="40" value="15" class="slider" id="myRange">
+
                 </div>
             </div>
             
             <button id="getpassword">Generate passwords</button>
+
         </div>
+
         <hr>
+
         <div id="passwords">
+
             <div id="password1-el"></div>
             <div id="password2-el"></div>
+            
         </div>
         
 

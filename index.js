@@ -20,6 +20,7 @@ let maxLength = 15
 let numbersEl = document.getElementById("numbers");
 let symbolsEl = document.getElementById("symbols")
 
+
 sliderEl.addEventListener("input", function(){
     selectorEl.textContent = `Password length: ${sliderEl.value}`
     maxLength = sliderEl.value;
@@ -41,7 +42,7 @@ function getRandom(numbers, symbols){
         return Math.floor(Math.random()*52);
     }else
         return Math.floor(Math.random()*characters.length);
-        
+
 }
 
 

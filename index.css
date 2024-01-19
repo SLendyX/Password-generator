@@ -24,6 +24,7 @@ span{
     font-size: 16px;
     
 }
+
 #head p{
     margin-top:10px;
     width: 372px;
@@ -88,7 +89,7 @@ hr{
     height: 15px; 
     background: #55F991;
     border-radius: 50%;
-    cursor: pointer; /* Cursor on hover */
+    cursor: pointer; 
 }
 
 .flex{
