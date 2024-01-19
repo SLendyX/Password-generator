@@ -60,4 +60,13 @@ hr{
     text-align: center;
     color: #55F991;
     font-size: 16px;
+    cursor:copy;
+    user-select: none;
+    animation-duration: 1s;
 }
+
+@keyframes copy{
+    from{background-color:#55F991}
+    to{background-color:#273549}
+}
+
